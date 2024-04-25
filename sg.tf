@@ -1,8 +1,9 @@
 # security groups that allows only ws netwokr and internal network
 resource "aws_security_group" "allow_docdb" {
-  name        = "roboshop-${var.ENV}-docdb-sg"
-  description = "roboshop-${var.ENV}-docdb-sg"
-  vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
+  name                    = "roboshop-${var.ENV}-docdb-sg"
+  description             = "roboshop-${var.ENV}-docdb-sg"
+  vpc_id                  = data.terraform_remote_state.vpc.outputs.VPC_ID
+
 
   ingress {
     from_port       = 27017

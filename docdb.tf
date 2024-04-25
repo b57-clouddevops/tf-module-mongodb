@@ -7,6 +7,7 @@ resource "aws_docdb_cluster" "docdb" {
 #   backup_retention_period = 5             # In Prod we would enable this 
 #   preferred_backup_window = "07:00-09:00" 
   skip_final_snapshot     = true
+  vpc_security_group_ids  = [aws_security_group.allow_docdb.id] 
 }
 
 # Creates a subnet-groups [ a groups of subnets that we supply to the cluster based resources ]
